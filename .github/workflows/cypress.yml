@@ -2,7 +2,7 @@ name: Cypress Tests
 
 on:
   push:
-    branches: [main] 
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -12,22 +12,26 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd projetoAutomacao # Mude para o diretório do seu projeto
+          npm install
 
       - name: Run Cypress tests
-        run: npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml" 
+        run: |
+          cd projetoAutomacao # Mude para o diretório do seu projeto
+          npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml"
 
       - name: Archive test results
         if: failure()
-        uses: actions/upload-artifact@v4 
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-results
-          path: cypress/reports 
+          path: projetoAutomacao/cypress/reports # Ajustado para o caminho correto
