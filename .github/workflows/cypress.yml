@@ -21,17 +21,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd projetoAutomacao 
+          cd ${{ github.workspace }} # Muda para o diretório do repositório clonado
           npm install
 
       - name: Run Cypress tests
         run: |
-          cd projetoAutomacao 
+          cd ${{ github.workspace }} # Muda para o diretório do repositório clonado
           npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml"
 
       - name: Archive test results
-        if: failure()
+        if: failure() 
         uses: actions/upload-artifact@v4
         with:
           name: cypress-results
-          path: projetoAutomacao/cypress/reports # Ajustado para o caminho correto
+          path: ${{ github.workspace }}/cypress/reports/** 
