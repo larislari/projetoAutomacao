@@ -20,18 +20,17 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: |
-          cd ${{ github.workspace }} # Muda para o diretório do repositório clonado
-          npm install
+        run: npm install
+
+      - name: Set executable permissions for Cypress
+        run: chmod +x ./node_modules/.bin/cypress
 
       - name: Run Cypress tests
-        run: |
-          cd ${{ github.workspace }} # Muda para o diretório do repositório clonado
-          npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml"
+        run: npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml"
 
       - name: Archive test results
         if: failure() 
         uses: actions/upload-artifact@v4
         with:
           name: cypress-results
-          path: ${{ github.workspace }}/cypress/reports/** 
+          path: cypress/reports/** 
