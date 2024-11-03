@@ -18,16 +18,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          node-version: '20'
 
       - name: Install dependencies
         run: |
-          cd projetoAutomacao # Mude para o diretório do seu projeto
+          cd projetoAutomacao 
           npm install
 
       - name: Run Cypress tests
         run: |
-          cd projetoAutomacao # Mude para o diretório do seu projeto
+          cd projetoAutomacao 
           npx cypress run --reporter junit --reporter-options "mochaFile=cypress/reports/test-results.xml"
 
       - name: Archive test results
