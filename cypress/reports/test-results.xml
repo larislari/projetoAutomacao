@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="9.923" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2024-11-03T22:31:14" tests="0" file="cypress\e2e\Login.cy.js" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="14.888" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-11-08T15:56:33" tests="0" file="cypress\e2e\FrontEnd\Login.cy.js" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Registrar Usuário" timestamp="2024-11-03T22:31:14" tests="0" time="0.000" failures="0">
+  <testsuite name="Registrar Usuário" timestamp="2024-11-08T15:56:33" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Teste de Cadastro e Login" timestamp="2024-11-03T22:31:14" tests="1" time="9.908" failures="0">
-    <testcase name="Registrar Usuário Teste de Cadastro e Login Deve logar com o usuário cadastrado" time="9.845" classname="Deve logar com o usuário cadastrado">
+  <testsuite name="Teste de Cadastro e Login" timestamp="2024-11-08T15:56:33" tests="1" time="14.866" failures="0">
+    <testcase name="Registrar Usuário Teste de Cadastro e Login Deve logar com o usuário cadastrado" time="14.647" classname="Deve logar com o usuário cadastrado">
     </testcase>
   </testsuite>
 </testsuites>
